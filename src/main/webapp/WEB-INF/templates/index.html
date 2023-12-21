@@ -1,10 +1,14 @@
 <!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/layout :: head"></head>
 <body>
-Welcom to Spring framework 6
+	<!-- navbar menu -->
+	<div th:replace="fragments/layout :: navbar-menu"></div>
+	
+	<!-- All thymeleaf fragments will be loaded in this div except layout-->
+	<div id="ajaxLoadedContent"></div>
+	
+	<!-- -->
+	<script th:src="@{/js/main.js?newversion}"></script>
 </body>
 </html>
