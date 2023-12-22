@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<th:block th:fragment="ajaxLoadedContent">
+	<div class="container"
+		style="margin-bottom: 100px; margin-top: 100px; font-family: Oswald, sans-serif;">
+		<div class="text-center mb-5">
+			<h2>Product Details</h2>
+		</div>
+		
+		<table class="table table-bordered">
+			<tbody>
+				<tr>
+					<td th:text="${'Preview'}"></td>
+					<td>
+						<img 
+						    th:onerror="this.src='https://as1.ftcdn.net/v2/jpg/00/36/94/26/1000_F_36942622_9SUXpSuE5JlfxLFKB1jHu5Z07eVIWQ2W.jpg'" 
+							th:src="${product.imageUrl}" 
+							style="max-height: 150px; width: 30%;" 
+						/>
+					</td>
+				</tr>
+				<tr>
+					<td th:text="${'Product Id'}"></td>
+					<td th:text="${product.productId}"></td>
+				</tr>
+				<tr>
+					<td th:text="${'Name'}"></td>
+					<td th:text="${product.name}"></td>
+				</tr>
+				<tr>
+					<td th:text="${'Category'}"></td>
+					<td th:text="${product.category}"></td>
+				</tr>
+				<tr>
+					<td th:text="${'Price'}"></td>
+					<td>
+						<span>&euro;</span>
+						<span th:text="${product.price}"></span>						
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		
+		<div class="text-center mt-5">
+			<button class="btn btn-secondary" th:onclick="redirectAllProducts()">
+				All Products
+			</button>
+		</div>
+	</div>
+</th:block>

@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import leo.mvc.mvn.jpa_crud.converter.TempConverter;
 import leo.mvc.mvn.jpa_crud.dto.ProductDto;
@@ -12,6 +13,7 @@ import leo.mvc.mvn.jpa_crud.entity.ProductEntity;
 import leo.mvc.mvn.jpa_crud.repository.ProductRepository;
 import leo.mvc.mvn.jpa_crud.service.ProductService;
 
+@Service
 public class ProductServiceImpl implements ProductService {
 
 	@Autowired
