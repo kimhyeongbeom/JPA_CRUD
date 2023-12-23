@@ -4,6 +4,11 @@
 <body>
 	<!-- navbar menu -->
 	<div th:replace="fragments/layout :: navbar-menu"></div>
+	<script th:inline="javascript"> 
+		var contextRoot = /*[[@{/}]]*/ ''; 
+		contextRoot = contextRoot.substr(0, contextRoot.length - 1);
+		alert("contextRoot : " + contextRoot);
+	</script>
 	
 	<!-- All thymeleaf fragments will be loaded in this div except layout-->
 	<div id="ajaxLoadedContent"></div>

@@ -51,7 +51,7 @@
 			if ( validateProduct() ) {
 				var formData = $("#productFrom").serialize();
 				$.ajax({
-					url: "http://localhost:8080/storeProduct",
+					url: "http://localhost:8080" + contextRoot + "/storeProduct",
 					type: "POST",
 					data:formData
 				})

@@ -24,9 +24,17 @@ public class ProductServiceImpl implements ProductService {
 	
 	@Override
 	public ProductDto addProduct(ProductDto product) {
+		System.out.println("----------------addProduct start------------------------------" );
+		System.out.println("----------------product : " + product );
 		ProductEntity productEntity = tempConverter.productDtoToEntity(product);
+
+		System.out.println("----------------productEntity : " + productEntity );
+		
 		ProductEntity storedProduct = productRepository.save(productEntity);
-		ProductDto returnValue = tempConverter.productEntityToDto(productEntity);
+		System.out.println("----------------storedProduct : " + storedProduct );
+		ProductDto returnValue = tempConverter.productEntityToDto(storedProduct);
+		System.out.println("----------------returnValue : " + returnValue );
+		System.out.println("----------------addProduct end------------------------------" );
 		return returnValue;
 	}
 

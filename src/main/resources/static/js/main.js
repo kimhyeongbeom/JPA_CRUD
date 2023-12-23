@@ -1,33 +1,33 @@
 window.onload = redirectHome;
 
 function redirectHome() {
-	$("#ajaxLoadedContent").load("/home");
+	$("#ajaxLoadedContent").load(contextRoot + "/home");
 }
 
 function redirectAddProduct() {
-	$("#ajaxLoadedContent").load("/addProduct");
+	$("#ajaxLoadedContent").load(contextRoot + "/addProduct");
 }
 
 function redirectAllProducts() {
-	$("#ajaxLoadedContent").load("/allProducts");
+	$("#ajaxLoadedContent").load(contextRoot + "/allProducts");
 }
 
 function redirectProductDetails(productId) {
-	$("#ajaxLoadedContent").load("/productDetails/" + productId);
+	$("#ajaxLoadedContent").load(contextRoot + "/productDetails/" + productId);
 }
 
 function redirectUpdateProduct(productId) {
-	$("#ajaxLoadedContent").load("/updateProduct/" + productId);
+	$("#ajaxLoadedContent").load(contextRoot + "/updateProduct/" + productId);
 }
 
 function redirectSearchProduct(keywork) {
-	$("#ajaxLoadedContent").load("/searchProducts/" + keywork);
+	$("#ajaxLoadedContent").load(contextRoot + "/searchProducts/" + keywork);
 }
 
 function deleteProduct(productId) {
 	if ( confirm("Remove this product?") ) {
 		$.ajax({
-			url: "http://localhost:8080/deleteProduct/" + productId,
+			url: "http://localhost:8080" + contextRoot + "/deleteProduct/" + productId,
 			type: "GET"
 		})
 		.done(function() {

@@ -38,6 +38,9 @@ public class MainController {
 	
 	@PostMapping(value = "/storeProduct")
 	public String storeProduct(@ModelAttribute("product") ProductDto product) {
+
+		System.out.println("----------------product : " + product );
+
 		productService.addProduct(product);
 		return "fragments/homePage :: ajaxLoadedContent";
 	}
@@ -45,6 +48,9 @@ public class MainController {
 	@GetMapping(value = "/allProducts")
 	public String getAllProducts(ModelMap map) {
 		List<ProductDto> allProducts = productService.listAll();
+
+		System.out.println("----------------allProducts : " + allProducts );
+
 		map.put("allProducts", allProducts);
 		map.put("recordsPerPage", 5); // 1 page당 보여지는 갯수
 		return "fragments/productList :: ajaxLoadedContent";
